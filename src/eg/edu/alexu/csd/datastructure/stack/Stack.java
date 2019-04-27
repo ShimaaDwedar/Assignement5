@@ -114,6 +114,7 @@ public class Stack implements IStack {
             if (action == 1) {
                 s = new Stack();
             } else if (action == 2) {
+                System.out.println("Enter the value");
                 int value = scan.nextInt();
                 s.push(value);
             } else if (action == 3) {
