@@ -13,10 +13,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
      */
     public boolean check(final int index, final String exp) {
         boolean find = false;
+        if (index == 0) {
+            return true;
+        }
         for (int i = index - 1; i > -1; i--) {
-            if (index == 0) {
-                return true;
-            }
             if (exp.charAt(i) == ' ') {
                 find = true;
             } else {
@@ -96,8 +96,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         for (int i = 0; i < expression.length(); i++) {
             if (Character.isDigit(expression.charAt(i))
                     || ((expression.charAt(i) == '-')
-                            && ((operand.isEmpty()
-                                    || check(i, expression))))) {
+                            && ((check(i, expression))))) {
                 int sign = 0;
                 if ((expression.charAt(i) == '-')) {
                     no = no + expression.charAt(i);
